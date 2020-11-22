@@ -17,7 +17,7 @@ function updateStructure(rec1,rec2){
 		return {...rec2, Children:[relativeDm]};
 	}
 	else{
-		return [...rec1];
+		return {...rec1};
 	}
 }
 function relativeDim(recA, recB){
