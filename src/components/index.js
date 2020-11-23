@@ -53,14 +53,14 @@ function contains(recA, recB){
 	  }
 	  return false;
 }
-const T = 100000;
-const W = 100000;
+// const T = 100000;
+// const W = 100000;
 function normalize(rec){
 	return {
-		x1 : rec.top ? parseInt(rec.top) : (T - (parseInt(rec.height) + parseInt(rec.bottom))),
-		x2 : rec.left ? parseInt(rec.left) : (W - (parseInt(rec.right) + parseInt(rec.width))),
-		y1 : rec.bottom ? (T - parseInt(rec.bottom)):  (parseInt(rec.height) + parseInt(rec.top)),
-		y2 : rec.right ?(W - parseInt(rec.right)): (parseInt(rec.width) + parseInt(rec.left))
+		x1 : rec.top ? parseInt(rec.top) : (parseInt(rec.height) + parseInt(rec.bottom)),
+		x2 : rec.left ? parseInt(rec.left) : (parseInt(rec.right) + parseInt(rec.width)),
+		y1 : rec.bottom ? parseInt(rec.bottom):  (parseInt(rec.height) + parseInt(rec.top)),
+		y2 : rec.right ? parseInt(rec.right): (parseInt(rec.width) + parseInt(rec.left))
 	}
 }
 
