@@ -23,10 +23,8 @@ function updateStructure(rec1,rec2){
 function relativeDim(recA, recB){
 		 const recAn = normalize(recA);
 		 const recBn = normalize(recB);
-		 const result = {
-			 children: recB.children
-		 }
-		 if(recBn.top){
+		 const result = {children: recB.children}
+		 if(recB.top){
 			 result.top = `${recBn.x1 - recAn.x1}px`;
 		 }
 		 if(recB.left){
