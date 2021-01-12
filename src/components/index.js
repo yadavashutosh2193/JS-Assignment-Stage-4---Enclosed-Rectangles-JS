@@ -48,20 +48,23 @@ function relativeDim(recA, recB){
 function contains(recA, recB){
 	  const recAn = normalize(recA);
 	  const recBn = normalize(recB);
-	  if((recAn.x1 <= recBn.x1) && (recAn.y1 <= recBn.y1) && (recAn.x2 >= recBn.x2) && (recAn.y2 >= recBn.y2)){
+	  if((recAn.x1 <= recBn.x1) 
+	  && (recAn.y1 <= recBn.y1) 
+	  && (recAn.x2 >= recBn.x2) 
+	  && (recAn.y2 >= recBn.y2))
+	  {
 		  return true;
 	  }else{
 		return false;
-	  }
-	  
+	  }	  
 }
-const T = 100000;
-const W = 100000;
+const T = 0;
+const W = 0;
 function normalize(rec){
 	return {
 		x1 : rec.top ? parseInt(rec.top) : (T - (parseInt(rec.height) + parseInt(rec.bottom))),
 		x2 : rec.left ? parseInt(rec.left) : (W - (parseInt(rec.right) + parseInt(rec.width))),
-		y1 : rec.bottom ? (T - parseInt(rec.bottom)):  (parseInt(rec.height) + parseInt(rec.top)),
+		y1 : rec.bottom ? (T - parseInt(rec.bottom)): (parseInt(rec.height) + parseInt(rec.top)),
 		y2 : rec.right ? (W - parseInt(rec.right)): (parseInt(rec.width) + parseInt(rec.left))
 	}
 }
